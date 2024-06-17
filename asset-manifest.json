@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Sweet-Note/static/css/main.48234961.css",
+    "main.js": "/Sweet-Note/static/js/main.8dd3e7a3.js",
+    "static/media/more.png": "/Sweet-Note/static/media/more.5e212d6ce34518b2da97.png",
+    "static/media/bold.svg": "/Sweet-Note/static/media/bold.d539e9aeccfb446aab1fe5f6215a73f3.svg",
+    "static/media/fullscreen.svg": "/Sweet-Note/static/media/fullscreen.de25d216dbc736c9bbe792e8ef7c6162.svg",
+    "static/media/img.svg": "/Sweet-Note/static/media/img.46216021bc566cc916d8b796a51ec532.svg",
+    "static/media/marker.svg": "/Sweet-Note/static/media/marker.fc0bbf632bb7296aed2b503df04b4f86.svg",
+    "static/media/list.svg": "/Sweet-Note/static/media/list.d63ce8da1970bea75889102c819b123a.svg",
+    "static/media/check.svg": "/Sweet-Note/static/media/check.a6c322e7eed502befdb0.svg",
+    "static/media/title.svg": "/Sweet-Note/static/media/title.b38869890d4b899087ef8c3a276255b1.svg",
+    "index.html": "/Sweet-Note/index.html",
+    "main.48234961.css.map": "/Sweet-Note/static/css/main.48234961.css.map",
+    "main.8dd3e7a3.js.map": "/Sweet-Note/static/js/main.8dd3e7a3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.48234961.css",
+    "static/js/main.8dd3e7a3.js"
+  ]
+}
