@@ -1,0 +1,531 @@
+body{margin: 0; overflow: hidden;}
+
+
+.body{display: flex;   z-index: -1;      height: 100vh;}
+
+
+
+.left-block{width: 400px; height: 100vh;}
+.left-block.hide{ width: 0px;}
+
+
+
+#textEdit{
+    font-family: "Inter";
+    font-size: 25px;
+    font-weight: 400;
+    overflow:hidden;
+    outline: 0;
+    outline-offset: 0;
+}
+
+
+.logo{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 27px;
+    padding-right: 27px;
+}
+
+.logo-text{
+    font-family: "Inter";
+    font-size: 64px;
+    font-weight: 600;
+    justify-items: center;
+    text-align: center;
+    cursor: context-menu;
+}
+
+
+
+
+.search{
+    border-radius: 15px;
+    margin-top: 27px;
+    margin-bottom: 27px;
+    margin-left: 15px;
+    margin-right: 15px;
+
+    padding-left: 12px;
+    padding-right: 12px;
+    display: flex;
+}
+.search-ico{
+    height: 36px;
+    width: 36px;
+    margin-right: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.search-input{
+    background-color: rgba(0,0,0,0);
+    border: none;
+    font-size: 130%;
+    font-weight: 500;
+    align-content: center;
+    display: grid;
+    outline: 0;
+    outline-offset: 0;
+    color: black;
+    font-family: "Inter";
+}
+.search-input::placeholder{color: #9a9a9a;}
+
+
+
+
+
+
+
+
+
+.notes-block{
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 205px);
+}
+.notes-block::-webkit-scrollbar {
+    width: 5px;
+    background-color: #f9f9fd;
+}
+.notes-block::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #006CA8;
+}
+.notes-block::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background-color: #f9f9fd;
+}
+
+
+.note{
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.note:active{
+    background-color: rgba(255, 255, 255, 0.68);
+}
+
+.note-title{
+    font-family: "Inter";
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    cursor: pointer;
+    width: max-content;
+}
+
+.note-subtitle{
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 300;
+    cursor: pointer;
+    width: max-content; 
+}
+
+
+.noNote{
+    font-family: "Inter";
+    font-size: 40px;
+    font-weight: 600;
+    display: block;
+    color:#b2b2b2;
+    cursor: default;
+}
+
+.create-note{
+    padding-top: 11px;
+    padding-bottom: 11px;
+    display: grid;
+    justify-content: center;
+    cursor: pointer;
+    position: sticky;
+    bottom: 0;
+    transition: 0.2s;
+}
+
+.create-note img{
+    height: 52px;
+    transition: 0.1s;
+    opacity: 0.2;
+}
+
+.create-note:hover{
+    background-color: rgb(50, 50, 50);
+}
+.create-note:active{
+    background-color: rgb(95, 95, 95);
+}
+
+.create-note:active img:active{
+    opacity: 1;
+    transform: scale(1.3);
+}
+
+.create-note:hover img{
+    transform: scale(1.1);
+    opacity: 0.3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.right-block{width: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: 1.5s 0.2s;
+}
+
+.edit{
+    display: flex;
+    height: 40px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    z-index: 1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    width: calc(100% - 385px);
+    transition: 0.3s;
+}
+.edit.fullscreen{
+    width: 100%;
+}
+
+.edit-block{
+    display: flex;
+}
+
+.button{
+    user-select: none;
+    height: 35px;
+    width: 35px;
+    display: grid;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.1s;
+    outline: 0;
+    outline-offset: 0;
+    border: 0;
+    align-content: center;
+    background-color: #ffffff00;
+}
+.button:active{
+    background-color: rgba(101, 101, 101, 0.442);
+    /* box-shadow: 0 0 5px 2px rgba(101, 101, 101, 0.442); */
+    transform: scale(1.1); 
+}
+.edit-block.first .button:active svg{
+    fill: white;
+    stroke: white;
+}
+
+.button img{
+    height: 32px;
+    width: 32px;
+}
+
+
+.logs{
+    background-color: #232323;
+    border-radius: 10px;
+    color: #f9f9fd;
+
+    font-size: 2em;
+    font-family: "Inter";
+    font-weight: 600;
+    user-select: none;
+
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.out{
+    transition: 1s ease 1s;
+    opacity: 0;
+}
+
+.text-mask-editor{
+    position: absolute;
+    margin-top: 30%;
+}
+
+.text-edit{
+    
+    padding-top: 100px;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 110px;
+}
+
+
+.context-menu{
+    display: block;
+    width: 170px;
+    position: absolute;
+    right: 0;
+    z-index: -2;
+    margin-top: 40px;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.context-menu button{
+    width: 100%;
+    height: 40px;
+    border: 0;
+    outline: 0;
+    font-family: "Inter";
+    font-size: 15px;
+    font-weight: 400;
+    border: 1px solid #787070;
+    border-left: none;
+    border-right: none;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+
+.context-menu.none{
+    margin-top: -100px;
+    transition: 0.3s;
+} 
+
+.context-menu button:first-child{
+    border-radius: 7px 7px 0 0;
+    border: none;
+}
+.context-menu button:last-child{
+    border-radius: 0 0 7px 7px;
+    border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-title{
+    background-color: rgba(0,0,0,0);
+    border: none;
+    font-family: "Inter";
+    font-size: 55px;
+    font-weight: 600;
+
+    width: 100%;
+    display: grid;
+    margin-bottom: 60px;
+    outline: 0;
+    outline-offset: 0;
+    min-height: 0px;
+}
+
+.textarea{
+    width: 100%;
+    resize:none;
+    background-color: rgba(0,0,0,0);
+    display: block;
+    font-family: "Inter";
+    font-size: 25px;
+    font-weight: 400;
+    overflow:hidden;
+    outline: 0;
+    outline-offset: 0;
+}
+
+.checkbox-note{
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+}
+
+
+.checkbox{
+    appearance: none;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    width: 20px;
+    background-color: rgba(0,0,0,0);
+    border: 2px solid grey;
+    border-radius: 5px;
+    transition: 0.1s;
+    margin: 0px 10px 0px 0px; 
+}
+.checkbox:active{
+    border-color: rgb(255, 255, 255);
+    box-shadow: 0 0 5px 2px rgb(216, 240, 255);
+}
+.checkbox:checked{
+    border: 2px solid;
+    border-radius: 5px;
+    background-color: #029ef3;
+    border-color: #029ef3;
+    content: url(res/ico/check.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.checkbox:checked:active{
+    border-color: rgb(71, 185, 255);
+    background-color: rgb(71, 185, 255);
+    box-shadow: 0 0 5px 2px rgb(216, 240, 255);
+}
+
+.checkbox-input{
+    font-family: "Inter";
+    font-size: 25px;
+    font-weight: 400;
+    width: 100%;
+    display: grid;
+    border: none;
+    outline: 0;
+    outline-offset: 0;
+    background-color: rgba(0,0,0,0);
+
+}
+
+.text{
+    font-family: "Inter";
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.title{
+    font-family: "Inter";
+    font-size: 35px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: none;
+    border: 0px;
+    outline: 0;
+    outline-offset: 0;
+    margin: 0;
+}
+h3{
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.mark-text{
+    color: black;
+}
+
+.mark-text.green{
+    background: rgb(107, 236, 93);
+}
+
+.mark-text span{
+    filter: invert(10%);
+}
+
+.image{
+    max-height: 400px;
+    max-width: 100%;
+    height: 14rem;
+    width: 24rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.list{
+    font-family: "Inter";
+    font-size: 25px;
+    font-weight: 400;
+    border: none;
+    outline: 0;
+    outline-offset: 0;
+}
+ul{
+    border: none;
+    outline: 0;
+    outline-offset: 0;
+    margin: 0;
+    padding-left: 24px;
+}
+.list ul{
+    padding: 0px;
+    margin: 0;
+    padding-left: 22px;
+}
+
+
+
+.single-list {
+    display: block;
+    font-family: "Inter";
+    font-size: 25px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+.single-list::before {
+    content: '\2022'; /* Юникод символ кругового маркера */
+    margin-right: 5px; /* Отступ между маркером и текстом */
+}
+
+
+.todolist{
+    font-family: "Inter";
+    font-size: 25px;
+    font-weight: 400;
+    border: none;
+    outline: 0;
+    outline-offset: 0;
+    padding: 0;
+}
+
+.todolist li{
+    display: flex;
+    list-style-type: none;
+}
+
+
