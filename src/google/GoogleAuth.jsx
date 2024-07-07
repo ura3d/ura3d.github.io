@@ -78,23 +78,22 @@ const GoogleAuth = ({ onLoginSuccess, onLogoutSuccess, saveToDrive }) => {
         <div className="google-auth-container">
             {user ? (
                 <div className="user-info">
-                    <img src={user.getImageUrl()} alt="User Profile" className="user-image" />
-                    <h3>Welcome, {user.getName()}</h3>
-                    <button onClick={handleSaveToDrive} className="save-button">Save Notes to Drive</button>
+                    {/* <button onClick={handleSaveToDrive} className="save-button">Save Notes to Drive</button> */}
                     <GoogleLogout
                         clientId={clientId}
                         buttonText="Logout"
                         onLogoutSuccess={handleLogoutSuccess}
                         render={renderProps => (
-                            <button onClick={renderProps.onClick} disabled={renderProps.disabled} className="logout-button">
-                                Logout
+                            <button onClick={renderProps.onClick} disabled={renderProps.disabled} className="logout-button" style={{width: '100%', alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
+                                <div className='logout-container'>
+                                    <img src={user.getImageUrl()} alt="User Profile" className="user-img"/>
+                                    <span className='logout-text'>Logout</span>
+                                </div>
                             </button>
                         )}
                     />
                 </div>
-            ) : (
-                <div className="login-container">
-                    <h2>Sign in with Google</h2>
+            ) : (   
                     <GoogleLogin
                         clientId={clientId}
                         buttonText="Login with Google"
@@ -102,13 +101,12 @@ const GoogleAuth = ({ onLoginSuccess, onLogoutSuccess, saveToDrive }) => {
                         onFailure={handleLoginFailure}
                         cookiePolicy={'single_host_origin'}
                         render={renderProps => (
-                            <button onClick={renderProps.onClick} disabled={renderProps.disabled} className="login-button">
-                                <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo" className="google-logo" />
+                            <button onClick={renderProps.onClick} disabled={renderProps.disabled} className="login-button" style={{width: '100%', alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
+                                <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt="Google Logo" className="google-logo" />
                                 Login with Google
                             </button>
                         )}
                     />
-                </div>
             )}
         </div>
     );

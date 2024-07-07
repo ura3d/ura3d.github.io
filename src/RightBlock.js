@@ -5,7 +5,7 @@ import Log from "./components/Log.js"
 
 import MyEditor from "./components/MyEditor.js";
 
-function RightBlock({note, updateNote, handleFullscreen, theme, setActiveTheme, activeTheme}){
+function RightBlock({note, updateNote, handleFullscreen, theme, setActiveTheme, activeTheme, onLoginSuccess, onLogoutSuccess, saveToDrive}){
     return(
         <div className="right-block" style={{ backgroundColor: theme.EditorColor }}>
             {/* <InstrumentsPanel handleFullscreen={handleFullscreen} isFullscreen={isFullscreen}/> */}
@@ -17,6 +17,10 @@ function RightBlock({note, updateNote, handleFullscreen, theme, setActiveTheme, 
             theme={theme}
             setActiveTheme={setActiveTheme}
             activeTheme={activeTheme}
+            //Google
+            onLoginSuccess={onLoginSuccess}
+            onLogoutSuccess={onLogoutSuccess}
+            saveToDrive={saveToDrive}
             />
             <Log/>
         </div>

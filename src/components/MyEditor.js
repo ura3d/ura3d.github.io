@@ -6,7 +6,7 @@ import '../res/themes/defaultTheme.css';
 import FullscreenBtn from "./fullscreenBtn";
 import MoreBtn from './MoreBtn';
 
-const CustomToolbar = ({ handleFullscreen, theme, setActiveTheme, activeTheme }) => (
+const CustomToolbar = ({ handleFullscreen, theme, setActiveTheme, activeTheme, onLoginSuccess, onLogoutSuccess, saveToDrive }) => (
     <div id="toolbar" style={{ backgroundColor: theme.EditorToolbarColor }}>
         <span className='ql-toolbar' style={{ backgroundColor: theme.EditorToolbarColor }}>
             <button style={{width: "10px", cursor: 'default'}}></button>
@@ -25,7 +25,7 @@ const CustomToolbar = ({ handleFullscreen, theme, setActiveTheme, activeTheme })
                 <option value="black">Black</option>
             </select>
             <button style={{width: "20px", cursor: 'default'}}></button>
-            <MoreBtn theme={theme} setActiveTheme={setActiveTheme} activeTheme={activeTheme}/>
+            <MoreBtn theme={theme} setActiveTheme={setActiveTheme} activeTheme={activeTheme} onLoginSuccess={onLoginSuccess} onLogoutSuccess={onLogoutSuccess} saveToDrive={saveToDrive}/>
             <button style={{width: "10px", cursor: 'default'}}></button>
         </span>
     </div>
@@ -48,7 +48,7 @@ const formats = [
 ];
 
 
-function MyEditor({note, updateNote, handleFullscreen, theme, setActiveTheme, activeTheme}) {
+function MyEditor({note, updateNote, handleFullscreen, theme, setActiveTheme, activeTheme, onLoginSuccess, onLogoutSuccess, saveToDrive}) {
     const initialHtmlContent = note ? note.body : '<p className="grey-text">Your awesome note</p>';
     const [text, setText] = useState(initialHtmlContent);
 
@@ -135,7 +135,7 @@ function MyEditor({note, updateNote, handleFullscreen, theme, setActiveTheme, ac
 
     return (
         <div>
-            <CustomToolbar handleFullscreen={handleFullscreen} theme={theme} setActiveTheme={setActiveTheme} activeTheme={activeTheme}/>
+            <CustomToolbar handleFullscreen={handleFullscreen} theme={theme} setActiveTheme={setActiveTheme} activeTheme={activeTheme} onLoginSuccess={onLoginSuccess} onLogoutSuccess={onLogoutSuccess} saveToDrive={saveToDrive}/>
             <ReactQuill
                 value={text}
                 onBlur={handleNoteChange}

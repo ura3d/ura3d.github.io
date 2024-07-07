@@ -146,13 +146,6 @@ function App() {
 
     return (
         <div className="body">
-            <GoogleAuth
-                onLoginSuccess={handleLoginSuccess}
-                onLogoutSuccess={handleLogoutSuccess}
-                saveToDrive={saveToDrive}
-            />
-            {isAuthenticated && (
-                <>
                     <LeftBlock
                         notes={notes}
                         activeNote={activeNote}
@@ -170,9 +163,11 @@ function App() {
                         theme={themes.find(theme => theme.id === activeTheme)}
                         setActiveTheme={setActiveTheme}
                         activeTheme={activeTheme}
+                        //Google
+                        onLoginSuccess={handleLoginSuccess}
+                        onLogoutSuccess={handleLogoutSuccess}
+                        saveToDrive={saveToDrive}
                     />
-                </>
-            )}
         </div>
     );
 }

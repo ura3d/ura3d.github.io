@@ -294,6 +294,7 @@ body{margin: 0; overflow: hidden;}
     margin-top: 40px;
     margin-right: 10px;
     transition: 0.3s;
+    border-radius: 5px 5px 5px 5px;
 }
 
 .context-menu button{
@@ -313,7 +314,7 @@ body{margin: 0; overflow: hidden;}
 }
 
 .context-menu.none{
-    margin-top: -100px;
+    margin-top: -130px;
     transition: 0.3s;
 } 
 
@@ -529,3 +530,49 @@ ul{
 }
 
 
+
+
+.moreOptButtons{
+    border: medium;
+    padding: 0px; 
+    float: none; 
+    display: block; 
+    height: 40px; 
+    width: 100%; 
+    background: rgb(233, 233, 237); 
+    color: rgb(0, 0, 0);
+}
+
+.google-auth-container{
+    background: rgb(233, 233, 237);
+    height: 40px;
+    background: rgb(233, 233, 237);   
+    border-radius: 0px 0px 7px 7px; 
+}
+
+.login-button{
+    width: 100%;
+    align-items: center;
+    display: flex;
+}
+.login-button img, .logout-button img{
+    width: 25px;
+    border-radius: 15px;
+    margin-right: 7px;
+}
+
+.logout-button{
+    background-color: red;
+}
+
+.logout-button:hover{
+    color: red;
+}
+
+.logout-container{
+    left: -16px;
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}

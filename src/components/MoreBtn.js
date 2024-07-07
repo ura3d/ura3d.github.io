@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import useClickOutside from "./useClickOutside";
+import GoogleAuth from '../google/GoogleAuth';
 import moreIco from '../res/ico/more.png' //IMG
 
-function MoreBtn({theme, setActiveTheme, activeTheme}){
+function MoreBtn({theme, setActiveTheme, activeTheme, onLoginSuccess, onLogoutSuccess, saveToDrive}){
     const [isMoreBtnActive, setIsMoreBtnActive] = useState(false);
 
     function handleIsMoreBtnActive(){
@@ -33,7 +34,11 @@ function MoreBtn({theme, setActiveTheme, activeTheme}){
         <div ref={ref} className={isMoreBtnActive ? "context-menu" : "context-menu none"}>
                         <button onClick={handleSetActiveTheme} className="moreOptBtn" style={{border: 'none', padding: 0, float: 'none', display: 'block', height: '40px', width: '100%', background: theme.EditorMoreButtonMenuColor, color: theme.EditorMoreButtonMenuTextColor }}>Theme change</button>
                         <button className="moreOptBtn" style={{border: '1px solid #787070', borderLeft: 0, borderRight: 0, padding: 0, float: 'none', display: 'block', height: '40px', width: '100%', background: theme.EditorMoreButtonMenuColor, color: theme.EditorMoreButtonMenuTextColor }}>Make PDF</button>
-                        <button className="moreOptBtn" style={{border: 'none', padding: 0, float: 'none', display: 'block', height: '40px', width: '100%', background: theme.EditorMoreButtonMenuColor, color: theme.EditorMoreButtonMenuTextColor }}>Settings</button>
+                        <button className="moreOptBtn" style={{borderBottom: '1px solid #787070', padding: 0, float: 'none', display: 'block', height: '40px', width: '100%', background: theme.EditorMoreButtonMenuColor, color: theme.EditorMoreButtonMenuTextColor }}>Settings</button>
+        <GoogleAuth
+                    onLoginSuccess={onLoginSuccess}
+                    onLogoutSuccess={onLogoutSuccess}
+                    saveToDrive={saveToDrive}></GoogleAuth>
         </div>
         </>
     )
